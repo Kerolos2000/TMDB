@@ -20,9 +20,15 @@ function getApi(url) {
           <a class="ancor" href="../movie.html?id=${response.results[i].id}">
             <div class="cardX">
             <div class="img">
-              <img src="${imgUrl}${
-          response.results[i].poster_path
-        }" class="img-fluid" alt="${response.results[i].title}">
+            ${
+              response.results[i].poster_path
+                ? `<img src="${imgUrl}${response.results[i].poster_path}" class="img-fluid" alt="${response.results[i].title}">`
+                : `<h2 class="text-center">${
+                    response.results[i].title ||
+                    response.results[i].original_title ||
+                    response.results[i].name
+                  }</h2>`
+            }
             </div>
               <div class="text">
                 <h5>${

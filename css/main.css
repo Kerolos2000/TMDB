@@ -1,7 +1,7 @@
 :root {
   --mainColor: #1e202b;
-  --secondaryColor: #101322;
-  --thirdColor: #1c1f3f;
+  --secondaryColor: #1e233b;
+  --thirdColor: #0d0f1f;
   --fourthColor: #675cff;
   --blackColor: #000;
   --whiteColor: #fff;
@@ -44,6 +44,7 @@ body {
   font-weight: 600;
   color: var(--whiteColor);
   background-color: var(--mainColor);
+  transition: 0.5s;
 }
 
 h1,
@@ -83,6 +84,7 @@ a {
   }
 }
 .navbar {
+  transition: 0.5s;
   background-color: var(--secondaryColor);
 }
 .navbar .navbar-collapse ul {
@@ -96,9 +98,19 @@ a {
 .navbar .navbar-collapse ul .searchLi .search {
   width: 50%;
 }
+@media (max-width: 991px) {
+  .navbar .navbar-collapse ul .searchLi .search {
+    width: 100%;
+  }
+}
 .navbar .navbar-collapse ul .ToggleBtnLi {
   display: flex;
   justify-content: flex-end;
+}
+@media (max-width: 991px) {
+  .navbar .navbar-collapse ul .ToggleBtnLi {
+    justify-content: flex-start;
+  }
 }
 .navbar .navbar-collapse ul li {
   display: flex;
@@ -495,4 +507,29 @@ a {
 }
 #movie #similar .swiper-slide .all-card {
   width: 100%;
+}
+
+footer {
+  background-color: var(--thirdColor);
+  padding: 10px;
+}
+footer .icons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+}
+footer .icons .icon {
+  background-color: var(--mainColor);
+  width: 40px;
+  height: 40px;
+  margin: 0 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  transition: 0.5s;
+}
+footer .icons .icon:hover {
+  background-color: var(--secondaryColor);
 }/*# sourceMappingURL=main.css.map */

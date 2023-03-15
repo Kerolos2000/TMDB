@@ -20,7 +20,6 @@ fetch(
     mainDiv.innerHTML = `
           <div class="col-lg-6 left">
             <div class="img">
-
             ${
               response.poster_path
                 ? `<img src="${
@@ -28,11 +27,6 @@ fetch(
                   }" class="img-fluid hide-img" alt="${response.title}">`
                 : `<h2 class="text-center">${response.title}</h2>`
             }
-
-
-
-
-
             </div>
           </div>
           <div class="col-lg-6 right">
