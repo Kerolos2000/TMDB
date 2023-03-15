@@ -28,6 +28,12 @@
 </head>
 
 <body class="custom-scrollbar" id="movie">
+
+  <!-- btn to up -->
+  <button id="toUp">
+    <i class="fa-solid fa-angles-up"></i>
+  </button>
+
   <!-- navbar -->
   <nav class="navbar navbar-expand-lg  text-white">
     <div class="container">
@@ -38,12 +44,21 @@
         <span></span>
         <span></span>
       </button>
-      <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
-        <div class="search">
-          <input class="form-control my-3 " type="search" placeholder="Search" id="Search" aria-label="Search">
-          <button class="form-control text-white w-auto" id="Search-btn"><i
-              class="fa-solid fa-magnifying-glass"></i></button>
-        </div>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mb-2 mb-lg-0">
+          <li class="nav-item searchLi">
+            <div class="search">
+              <input class="form-control my-3 " type="search" placeholder="Search" id="Search" aria-label="Search">
+              <button class="form-control text-white w-auto" id="Search-btn"><i
+                  class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+          </li>
+          <li class="nav-item ToggleBtnLi">
+            <div class="ToggleBtn">
+              <div class="circle"></div>
+            </div>
+          </li>
+        </ul>
       </div>
     </div>
   </nav>
@@ -81,12 +96,12 @@
   <script>
     var swiper = new Swiper(".mySwiper", {
       spaceBetween: 10,
-      centeredSlides: true,
+      centeredSlides: false,
       freeMode: true,
-      autoplay: {
-        delay: 4000,
-        disableOnInteraction: false
-      },
+      // autoplay: {
+      //   delay: 4000,
+      //   disableOnInteraction: false
+      // },
       breakpoints: {
         279: {
           slidesPerView: 2
@@ -106,6 +121,7 @@
   <script src="js/all.min.js"></script>
   <!-- main js file -->
   <script src="js/movie.js"></script>
+  <script src="js/main.js"></script>
 </body>
 
 </html>

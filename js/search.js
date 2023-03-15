@@ -65,21 +65,34 @@ SearchBtn.addEventListener("click", () => {
   }
 });
 
-//
 $(".badge").click(function () {
   loader.classList.add("show-loading");
   mainDiv.innerHTML = "";
   let newTarget = this.dataset.target; // this.dataset.target = e.target.dataset.target
-  let badge = Array.from($(".badge"));
-  badge.forEach((el) => {
-    el.classList.remove("active");
-  });
-  this.classList.add("active");
+  let newDate = this.dataset.date;
   if (newTarget == "trending") {
-    getApi(`https://api.themoviedb.org/3/trending/all/day?api_key=${myKey}`);
+    getApi(
+      `https://api.themoviedb.org/3/trending/all/${newDate}?api_key=${myKey}`
+    );
   } else {
     getApi(
       `https://api.themoviedb.org/3/movie/${newTarget}?api_key=${myKey}&language=en-US&page=1`
     );
   }
 });
+
+// add and remove class active
+$(".activeMain").click(function () {
+  active(".activeMain");
+  this.classList.add("active");
+});
+$(".activeSub").click(function () {
+  active(".activeSub");
+  this.classList.add("active");
+});
+function active(e) {
+  let activeX = Array.from($(e));
+  activeX.forEach((el) => {
+    el.classList.remove("active");
+  });
+}

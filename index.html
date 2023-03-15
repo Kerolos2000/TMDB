@@ -26,6 +26,12 @@
 </head>
 
 <body class="custom-scrollbar" id="index">
+
+  <!-- btn to up -->
+  <button id="toUp">
+    <i class="fa-solid fa-angles-up"></i>
+  </button>
+
   <!-- navbar -->
   <nav class="navbar navbar-expand-lg  text-white">
     <div class="container">
@@ -36,12 +42,21 @@
         <span></span>
         <span></span>
       </button>
-      <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
-        <div class="search">
-          <input class="form-control my-3 " type="search" placeholder="Search" id="Search" aria-label="Search">
-          <button class="form-control text-white w-auto" id="Search-btn"><i
-              class="fa-solid fa-magnifying-glass"></i></button>
-        </div>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mb-2 mb-lg-0">
+          <li class="nav-item searchLi">
+            <div class="search">
+              <input class="form-control my-3 " type="search" placeholder="Search" id="Search" aria-label="Search">
+              <button class="form-control text-white w-auto" id="Search-btn"><i
+                  class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+          </li>
+          <li class="nav-item ToggleBtnLi">
+            <div class="ToggleBtn">
+              <div class="circle"></div>
+            </div>
+          </li>
+        </ul>
       </div>
     </div>
   </nav>
@@ -49,22 +64,27 @@
   <!-- main section -->
   <section id="main">
     <div class="container">
-
       <div id="category" class="w-100 my-3 p-3">
-        <span data-target="trending" class="badge active p-3">trending</span>
-        <span data-target="now_playing" class="badge p-3">Now Playing</span>
-        <span data-target="popular" class="badge p-3">Popular</span>
-        <span data-target="top_rated" class="badge p-3">Top Rated</span>
-        <span data-target="upcoming" class="badge p-3">Upcoming</span>
+        <div class="dropdown">
+          <span class="dropdown-toggle activeMain active" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Trending
+          </span>
+          <ul class="dropdown-menu">
+            <span data-target="trending" data-date="day" class="badge active activeSub">Day</span>
+            <span data-target="trending" data-date="week" class="badge activeSub">Week</span>
+          </ul>
+        </div>
+        <span data-target="now_playing" class="badge activeMain">Now Playing</span>
+        <span data-target="popular" class="badge activeMain">Popular</span>
+        <span data-target="top_rated" class="badge activeMain">Top Rated</span>
+        <span data-target="upcoming" class="badge activeMain">Upcoming</span>
       </div>
-
       <div id="loader" class="show-loading">
         <div></div>
         <div></div>
         <div></div>
       </div>
       <div id="main-div" class="row justify-content-center g-3">
-
       </div>
     </div>
   </section>
@@ -72,10 +92,12 @@
   <!-- jQuary -->
   <script src="js/jquery-3.6.3.min.js"></script>
   <!-- bootstrap js -->
-  <script src="js/bootstrap.js"></script>
+  <!-- <script src="js/bootstrap.js"></script> -->
+  <script src="js/bootstrap.bundle.min.js"></script>
   <!-- fontawesome -->
   <script src="js/all.min.js"></script>
   <!-- main js file -->
+  <script src="js/main.js"></script>
   <script src="js/search.js"></script>
 </body>
 
