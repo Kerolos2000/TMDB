@@ -1,3 +1,4 @@
+// shared
 :root {
   --mainColor: #1e202b;
   --secondaryColor: #1e233b;
@@ -16,12 +17,10 @@
   --blackColor: #000;
   --whiteColor: #fff;
 }
-
 ::selection {
   background-color: var(--whiteColor);
   color: var(--mainColor);
 }
-
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -52,6 +51,70 @@ h6 {
 a {
   text-decoration: none;
   color: var(--whiteColor);
+}
+
+// loader
+#loader {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  height: 0vh;
+  transition: 1s;
+  z-index: -1;
+  div {
+    position: absolute;
+    border-radius: 50%;
+    border-left-color: var(--secondaryColor) !important;
+    border: 10px solid var(--thirdColor);
+  }
+  :nth-child(1) {
+    width: 100px;
+    height: 100px;
+    animation: loop1 1s linear infinite;
+  }
+  :nth-child(2) {
+    width: 120px;
+    height: 120px;
+    animation: loop2 1s linear infinite;
+  }
+  :nth-child(3) {
+    width: 80px;
+    height: 80px;
+    background-color: var(--thirdColor);
+    border: none;
+    animation: loop3 1s linear alternate infinite;
+  }
+}
+#loader.show-loading {
+  opacity: 1;
+  height: 30vh;
+  transition: 0s;
+}
+@keyframes loop1 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes loop2 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+@keyframes loop3 {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 // btn to return scroll to top
@@ -124,6 +187,7 @@ a {
   }
 }
 
+// nav sec
 .navbar {
   position: fixed;
   top: 0;
@@ -253,6 +317,7 @@ a {
   }
 }
 
+// main page
 #main {
   min-height: 50vh;
   margin-block: 2rem;
@@ -266,13 +331,7 @@ a {
     #category {
       display: flex;
       justify-content: center;
-      overflow-x: auto;
-      &::-webkit-scrollbar {
-        height: 5px;
-      }
-      @media (max-width: 991px) {
-        justify-content: flex-start;
-      }
+      flex-wrap: wrap;
       .dropdown {
         .dropdown-menu {
           margin: 0;
@@ -378,69 +437,7 @@ a {
   }
 }
 
-#loader {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  height: 0vh;
-  transition: 1s;
-  z-index: -1;
-  div {
-    position: absolute;
-    border-radius: 50%;
-    border-left-color: var(--secondaryColor) !important;
-    border: 10px solid var(--thirdColor);
-  }
-  :nth-child(1) {
-    width: 100px;
-    height: 100px;
-    animation: loop1 1s linear infinite;
-  }
-  :nth-child(2) {
-    width: 120px;
-    height: 120px;
-    animation: loop2 1s linear infinite;
-  }
-  :nth-child(3) {
-    width: 80px;
-    height: 80px;
-    background-color: var(--thirdColor);
-    border: none;
-    animation: loop3 1s linear alternate infinite;
-  }
-}
-#loader.show-loading {
-  opacity: 1;
-  height: 30vh;
-  transition: 0s;
-}
-@keyframes loop1 {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-@keyframes loop2 {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(-360deg);
-  }
-}
-@keyframes loop3 {
-  0% {
-    opacity: 0.5;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
+// movie page
 #movie {
   #main {
     margin: 8rem 0 2rem 0;
@@ -577,6 +574,7 @@ a {
   }
 }
 
+// footer sec
 footer {
   background-color: var(--thirdColor);
   padding: 10px;

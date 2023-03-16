@@ -63,6 +63,70 @@ a {
   color: var(--whiteColor);
 }
 
+#loader {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  height: 0vh;
+  transition: 1s;
+  z-index: -1;
+}
+#loader div {
+  position: absolute;
+  border-radius: 50%;
+  border-left-color: var(--secondaryColor) !important;
+  border: 10px solid var(--thirdColor);
+}
+#loader :nth-child(1) {
+  width: 100px;
+  height: 100px;
+  animation: loop1 1s linear infinite;
+}
+#loader :nth-child(2) {
+  width: 120px;
+  height: 120px;
+  animation: loop2 1s linear infinite;
+}
+#loader :nth-child(3) {
+  width: 80px;
+  height: 80px;
+  background-color: var(--thirdColor);
+  border: none;
+  animation: loop3 1s linear alternate infinite;
+}
+
+#loader.show-loading {
+  opacity: 1;
+  height: 30vh;
+  transition: 0s;
+}
+
+@keyframes loop1 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes loop2 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+@keyframes loop3 {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 #toUp {
   position: fixed;
   bottom: 15px;
@@ -276,15 +340,7 @@ a {
 #main .container #category {
   display: flex;
   justify-content: center;
-  overflow-x: auto;
-}
-#main .container #category::-webkit-scrollbar {
-  height: 5px;
-}
-@media (max-width: 991px) {
-  #main .container #category {
-    justify-content: flex-start;
-  }
+  flex-wrap: wrap;
 }
 #main .container #category .dropdown .dropdown-menu {
   margin: 0;
@@ -424,70 +480,6 @@ a {
   padding: 15px 0;
 }
 
-#loader {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  height: 0vh;
-  transition: 1s;
-  z-index: -1;
-}
-#loader div {
-  position: absolute;
-  border-radius: 50%;
-  border-left-color: var(--secondaryColor) !important;
-  border: 10px solid var(--thirdColor);
-}
-#loader :nth-child(1) {
-  width: 100px;
-  height: 100px;
-  animation: loop1 1s linear infinite;
-}
-#loader :nth-child(2) {
-  width: 120px;
-  height: 120px;
-  animation: loop2 1s linear infinite;
-}
-#loader :nth-child(3) {
-  width: 80px;
-  height: 80px;
-  background-color: var(--thirdColor);
-  border: none;
-  animation: loop3 1s linear alternate infinite;
-}
-
-#loader.show-loading {
-  opacity: 1;
-  height: 30vh;
-  transition: 0s;
-}
-
-@keyframes loop1 {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-@keyframes loop2 {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(-360deg);
-  }
-}
-@keyframes loop3 {
-  0% {
-    opacity: 0.5;
-  }
-  100% {
-    opacity: 1;
-  }
-}
 #movie #main {
   margin: 8rem 0 2rem 0;
 }

@@ -63,14 +63,13 @@ fetch(
           </div>
     `;
   });
-
 // on search get all movie contain search value
 const SearchInput = document.querySelector("#Search");
 const SearchBtn = document.querySelector("#Search-btn");
 SearchBtn.addEventListener("click", () => {
   location.href = `./index.html?id=${SearchInput.value}`;
 });
-
+// similar movies
 let similar = $("#similar .swiper-wrapper");
 fetch(
   `https://api.themoviedb.org/3/movie/${movieId}/similar?api_key=${myKey}&language=en-US&page=1`

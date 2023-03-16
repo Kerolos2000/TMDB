@@ -6,14 +6,11 @@ const SearchInput = document.querySelector("#Search");
 const SearchBtn = document.querySelector("#Search-btn");
 const loader = document.querySelector("#loader");
 const loadMore = document.querySelector(".loadMore");
-
 // console.log(movieId);
-
 function getApi(url) {
   fetch(url)
     .then((response) => response.json())
     .then((response) => {
-      // console.log(response);
       loader.classList.remove("show-loading");
       let temp = "";
       for (let i = 0; i < response.results.length; i++) {
@@ -75,7 +72,6 @@ if (movieId != "") {
 } else {
   getApi(`https://api.themoviedb.org/3/trending/all/day?api_key=${myKey}`);
 }
-
 // on search get all movie contain search value
 SearchBtn.addEventListener("click", () => {
   mainDiv.innerHTML = "";
@@ -87,7 +83,7 @@ SearchBtn.addEventListener("click", () => {
     getApi(`https://api.themoviedb.org/3/trending/all/day?api_key=${myKey}`);
   }
 });
-
+// call api agine
 $(".badge").click(function () {
   loader.classList.add("show-loading");
   mainDiv.innerHTML = "";

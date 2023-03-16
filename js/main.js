@@ -33,7 +33,6 @@ $(window).scroll(function () {
 $("#toUp").click(() => {
   $("html,body").animate({ scrollTop: 0 }, 1000);
 });
-
 // mouse move animation
 let btn = document.querySelectorAll("#mouse-cursor-gradient-tracking");
 for (let j = 0; j < btn.length; j++) {
@@ -45,9 +44,9 @@ for (let j = 0; j < btn.length; j++) {
     btn[j].style.setProperty("--y", y + "px");
   });
 }
-
-document.body.addEventListener("keydown",(e)=>{
-  if(e.key == "Enter"){
-    SearchBtn.click()
+// enter function
+document.body.addEventListener("keydown", (e) => {
+  if (e.key == "Enter") {
+    SearchBtn.click();
   }
-})
+});
