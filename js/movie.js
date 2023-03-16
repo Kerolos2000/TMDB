@@ -81,7 +81,7 @@ fetch(
       similar[0].innerHTML += `
       <div class="swiper-slide">
         <div class="all-card">
-          <a class="ancor" href="../movie.html?id=${response[i].id}">
+          <a class="ancor" href="./movie.html?id=${response[i].id}">
             <div class="cardX">
               <div class="img">
               ${

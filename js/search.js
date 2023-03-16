@@ -16,7 +16,7 @@ function getApi(url) {
       for (let i = 0; i < response.results.length; i++) {
         temp += `
         <div class="all-card col-sm-6 col-lg-4 col-xl-3">
-          <a class="ancor" href="../movie.html?id=${response.results[i].id}">
+          <a class="ancor" href="./movie.html?id=${response.results[i].id}">
             <div class="cardX">
             <div class="img">
             ${
