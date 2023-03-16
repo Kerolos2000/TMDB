@@ -8,7 +8,6 @@ fetch(
 )
   .then((response) => response.json())
   .then((response) => {
-    // console.log(response);
     let arr = [];
     let companies = "company";
     for (var i = 0; i < response.production_companies.length; i++) {

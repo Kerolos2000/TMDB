@@ -5,6 +5,8 @@ const mainDiv = document.querySelector("#main-div");
 const SearchInput = document.querySelector("#Search");
 const SearchBtn = document.querySelector("#Search-btn");
 const loader = document.querySelector("#loader");
+const loadMore = document.querySelector(".loadMore");
+
 // console.log(movieId);
 
 function getApi(url) {
@@ -48,6 +50,21 @@ function getApi(url) {
         `;
       }
       mainDiv.innerHTML = temp;
+      // to show new 10 card
+      let cards = document.querySelectorAll(".all-card");
+      let currentCard = 10;
+      loadMore.onclick = function () {
+        for (let i = currentCard; i < currentCard + 10; i++) {
+          if (cards[i]) {
+            cards[i].style.position = "relative";
+            cards[i].style.transform = "scale(1)";
+          }
+        }
+        currentCard += 10;
+        if (currentCard >= cards.length) {
+          loadMore.style.display = "none";
+        }
+      };
     });
 }
 if (movieId != "") {
@@ -91,6 +108,10 @@ $(".badge").click(function () {
 $(".activeMain").click(function () {
   active(".activeMain");
   this.classList.add("active");
+  loadMore.style.display = "block";
+  if (!this.classList.contains("dropdown-toggle")) {
+    active(".activeSub");
+  }
 });
 $(".activeSub").click(function () {
   active(".activeSub");

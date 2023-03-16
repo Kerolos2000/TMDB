@@ -18,7 +18,8 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
     rel="stylesheet">
-
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="css/swiper-bundle.min.css" />
   <!-- bootstrap css -->
   <link rel="stylesheet" href="css/bootstrap.min.css" />
   <!-- main css file -->
@@ -65,6 +66,9 @@
   <section id="main">
     <div class="container">
       <div id="category" class="w-100 my-3 p-3">
+
+
+
         <div class="dropdown">
           <span class="dropdown-toggle activeMain active" type="button" data-bs-toggle="dropdown" aria-expanded="false">
             Trending
@@ -78,6 +82,13 @@
         <span data-target="popular" class="badge activeMain">Popular</span>
         <span data-target="top_rated" class="badge activeMain">Top Rated</span>
         <span data-target="upcoming" class="badge activeMain">Upcoming</span>
+
+
+
+
+
+
+
       </div>
       <div id="loader" class="show-loading">
         <div></div>
@@ -86,15 +97,31 @@
       </div>
       <div id="main-div" class="row justify-content-center g-3">
       </div>
+      <div class="load">
+        <button id="mouse-cursor-gradient-tracking" class="btn px-3 loadMore">Load More</button>
+      </div>
     </div>
   </section>
 
+  <footer class="text-center">
+    <p>created by Kerolos Magdy</p>
+    <div class="icons">
+      <a class="icon" href="https://www.linkedin.com/in/kerolos-magdy-314644212/">
+        <i class="fa-brands fa-linkedin-in"></i>
+      </a>
+      <a class="icon" href="https://github.com/Kerolos2000">
+        <i class="fa-brands fa-github"></i>
+      </a>
+      <a class="icon" href="https://kerolos2000.github.io/portfolio/">
+        <i class="fa-solid fa-bookmark"></i>
+      </a>
+    </div>
+  </footer>
 
 
   <!-- jQuary -->
   <script src="js/jquery-3.6.3.min.js"></script>
   <!-- bootstrap js -->
-  <!-- <script src="js/bootstrap.js"></script> -->
   <script src="js/bootstrap.bundle.min.js"></script>
   <!-- fontawesome -->
   <script src="js/all.min.js"></script>
